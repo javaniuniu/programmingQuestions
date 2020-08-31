@@ -32,3 +32,21 @@
 5. 两个线程轮流打印数字，一直到100
     - [join实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject5/T1.java)
 6. 编写一个程序，启动三个线程，三个线程的ID分别是A，B，C；，每个线程将自己的ID值在屏幕上打印5遍，打印顺序是ABCABC..
+    - [内置锁实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject6/T2.java)
+7. 单例模式 ：懒汉式 饿汉式 双重检测锁
+   - 所有的单例模式 构造函数必须私有
+   - [额汉实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject7/HungerMan.java)
+   - [懒汉实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject7/LazyMan.java)
+   - [双重检测实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject7/DoubleCheck.java)
+   
+   
+8. 1：A线程正在执行一个对象中的同步方法，B线程是否可以同时执行同一个对象中的非同步方法？
+   2：同上，B线程是否可以同时执行同一个对象中的另一个同步方法？
+   3：线程抛出异常会释放锁吗？
+   4：volatile和synchronized区别？
+   5：写一个程序，证明AtomXXX类比synchronized更高效
+   6：AtomXXX类可以保证可见性吗？请写一个程序来证明
+   7：写一个程序证明AtomXXX类的多个方法并不构成原子性
+   8：写一个程序模拟死锁
+   9：写一个程序，在main线程中启动100个线程，100个线程完成后，主线程打印“完成”，使用join()和countdownlatch都可以完成，请比较异同。
+   10：一个高效的游戏服务器应该如何设计架构？
