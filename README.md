@@ -1,9 +1,16 @@
+
+### 核心概念：
+    - 所有的线程中，都是通过队列 AbstractQueuedSynchronizer 来排序
+    - 线程之间不可见
+    - notify 不释放锁
+    - wait 会释放锁，并进入阻塞状态
+### 并发编程题
 1. 题目一：子线程循环2次，主线程循环2次，然后子线程循环2次，主线程循环2次，这样循环10次；
-- [内置锁实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject1/T1.java)
-- [显示锁实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject1/T2.java)
+    - [内置锁实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject1/T1.java)
+    - [显示锁实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject1/T2.java)
 2. 题目二：写两个线程，一个线程打印1～52，另一个线程打印A～Z，打印顺序是12A34B...5152Z；
-- [显示锁实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject2/D1.java)
-- [内置锁实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject2/Demo1.java)
+    - [显示锁实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject2/D1.java)
+    - [内置锁实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject2/Demo1.java)
 3. 问题描述 
    启动3个线程打印递增的数字, 线程1先打印1,2,3,4,5, 然后是线程2打印6,7,8,9,10, 然后是线程3打印11,12,13,14,15. 接着再由线程1打印16,17,18,19,20….以此类推, 直到打印到75. 程序的输出结果应该为:
    
@@ -39,7 +46,59 @@
    - [懒汉实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject7/LazyMan.java)
    - [双重检测实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject7/DoubleCheck.java)
    
+8. 读写锁 , CyclicBarrier ,  CountDownLatch Phaser , Semaphore
+   - 读写锁
+    - 有共享锁和排他锁 两个概念
+    - [读写锁实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject8/Test_ReadWriteLock.java)
+   - CyclicBarrier
+    - 使用场景：当需要某些条件同时满足时，可使用
+    - [实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject8/Test_CyclicBarrier.java)
+   - Phaser
+    - 使用场景：某个流程有多个阶段，多个线程同时参与，在不同阶段，线程相应的解释
+    - 比如办酒席：人齐，吃饭，人走，洞房
+   - Semaphore 信号灯
+    - 使用场景： 可用于限流
+    - [实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject8/Test_Semaphore.java)
+   - Exchanger
+    - 两个程序之间通信
+    - 执行 exchanger() 是阻塞的
+   - LockSupport 
+    - 可以指定线程结束阻塞状态
+    - [实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject8/Test_LockSupport.java)
    
+9. 实现一个容器，提供两个方法，add，size ,写两个线程，线程1 添加10个元素到容器，线程2 实现监控元素的个数，当线程个数到5个时，线程2给出提示并结束
+   - [同步容器实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject9/T1_NotifyHoldingLock.java)
+   - [CountDownLatch实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject9/T1_NotifyHoldingLock.java)
+   - [LockSupport实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject9/T1_LockSupport.java)
+10. 写一个固定容量的容器，拥有put和get方法，以及getCount 方法，能够支持2个生产者线程以及10个消费者线程的阻塞调用
+   - [内置锁实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject10/T1_Container.java)
+   - [显示锁实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject10/T2_Container.java)
+11. 强软弱虚 引用
+    - 强：当对于引用为空，开始回收内存
+    - [强](src/main/java/com/javaniuniu/juc/loop/output/subject11/Test_NormalReference.java)
+    - 软：当堆内存满了，开始回收内存  （可用于缓存）
+    - [软](src/main/java/com/javaniuniu/juc/loop/output/subject11/Test_SoftReference.java)
+    - 弱：只要触发gc，就会被回收    （一般用于容器） 在ThreadLocal 中应用到
+    - [弱](src/main/java/com/javaniuniu/juc/loop/output/subject11/Test_WeakReference.java)
+    - 虚：管理堆外内存  
+   
+   
+### [八个经典的java多线程编程题目](https://blog.csdn.net/shinecjj/article/details/103792151)
+
+1. 要求线程a执行完才开始线程b, 线程b执行完才开始线程
+2. 两个线程轮流打印数字，一直到100
+3. 写两个线程，一个线程打印1~ 52，另一个线程打印A~Z，打印顺序是12A34B...5152Z
+4. 编写一个程序，启动三个线程，三个线程的ID分别是A，B，C；，每个线程将自己的ID值在屏幕上打印5遍，打印顺序是ABCABC...
+5. 编写10个线程，第一个线程从1加到10，第二个线程从11加20…第十个线程从91加到100，最后再把10个线程结果相加。
+6. 三个窗口同时卖票
+7.  生产者消费者
+    7.1 synchronized方式
+    7.2 ReentrantLock方式 (可以保证顺序)
+    7.3 BlockingQueue方式
+8. 交替打印两个数组
+
+   
+### 思考题
 8. 1：A线程正在执行一个对象中的同步方法，B线程是否可以同时执行同一个对象中的非同步方法？
    2：同上，B线程是否可以同时执行同一个对象中的另一个同步方法？
    3：线程抛出异常会释放锁吗？
