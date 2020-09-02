@@ -8,7 +8,7 @@ package com.javaniuniu.juc.loop.output.subject2;
 public class Demo1 {
     static class Behaver{
         private volatile boolean flag=true;
-        private int count=1;
+        private volatile int count=1;
         public synchronized void printNum(){
             while(!flag){
                 try {
@@ -39,20 +39,14 @@ public class Demo1 {
 
     public static void main(String[] args) {
         Behaver behaver=new Behaver();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                for (int i = 0; i < 26; i++) {
-                    behaver.printNum();
-                }
+        new Thread(() -> {
+            for (int i = 0; i < 26; i++) {
+                behaver.printNum();
             }
         }).start();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                for (int i = 0; i < 26; i++) {
-                    behaver.printChar();
-                }
+        new Thread(() -> {
+            for (int i = 0; i < 26; i++) {
+                behaver.printChar();
             }
         }).start();
     }

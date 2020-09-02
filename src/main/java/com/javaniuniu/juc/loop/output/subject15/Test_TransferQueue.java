@@ -1,4 +1,4 @@
-package com.javaniuniu.juc.loop.output.subject2;
+package com.javaniuniu.juc.loop.output.subject15;
 
 import java.util.concurrent.LinkedTransferQueue;
 import java.util.concurrent.TransferQueue;

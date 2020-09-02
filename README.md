@@ -11,7 +11,7 @@
 2. 题目二：写两个线程，一个线程打印1～52，另一个线程打印A～Z，打印顺序是12A34B...5152Z；
     - [显示锁实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject2/D1.java)
     - [内置锁实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject2/Demo1.java)
-    - [TransferQueue实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject2/Test_TransferQueue.java)
+    
 3. 问题描述 
    启动3个线程打印递增的数字, 线程1先打印1,2,3,4,5, 然后是线程2打印6,7,8,9,10, 然后是线程3打印11,12,13,14,15. 接着再由线程1打印16,17,18,19,20….以此类推, 直到打印到75. 程序的输出结果应该为:
    
@@ -106,6 +106,29 @@
     - [SynchronousQueue实现](src/main/java/com/javaniuniu/juc/loop/output/subject14/Test_SynchronousQueue.java)
     - [TransferQueue实现](src/main/java/com/javaniuniu/juc/loop/output/subject14/Test_TransferQueue.java)
    
+15. 写两个线程，一个线程打印1～26，另一个线程打印A～Z，打印顺序是1A2B...26Z
+    - 这个考的是线程执行顺序，可以通过wait 和阻塞队列实现
+    - [TransferQueue实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject15/Test_TransferQueue.java)
+    - [AtomicInteger实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject15/Test_AtomicInteger.java)
+    - [BlockingQueue实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject15/Test_BlockingQueue.java)
+    - 
+    
+16. 线程池想过类示例
+    - [Executor](src/main/java/com/javaniuniu/juc/loop/output/subject16/Test_Executor.java)
+    - [ExecutorService](src/main/java/com/javaniuniu/juc/loop/output/subject16/Test_ExecutorService.java)
+    - [Callable](src/main/java/com/javaniuniu/juc/loop/output/subject16/Test_Callable.java)
+    - [ThreadPool](src/main/java/com/javaniuniu/juc/loop/output/subject16/Test_ThreadPool.java)
+    - [Future](src/main/java/com/javaniuniu/juc/loop/output/subject16/Test_Future.java)
+    - [MyRejectedHandler](src/main/java/com/javaniuniu/juc/loop/output/subject16/Test_MyRejectedHandler.java)
+    - [SingleThreadPool](src/main/java/com/javaniuniu/juc/loop/output/subject16/Test_SingleThreadPool.java)
+    - [CachedPool](src/main/java/com/javaniuniu/juc/loop/output/subject16/Test_CachedPool.java)
+    - [FixedThreadPool](src/main/java/com/javaniuniu/juc/loop/output/subject16/Test_FixedThreadPool.java)
+    - [ScheduledPool](src/main/java/com/javaniuniu/juc/loop/output/subject16/Test_ScheduledPool.java)
+    
+    
+    
+
+
 ### [八个经典的java多线程编程题目](https://blog.csdn.net/shinecjj/article/details/103792151)
 
 1. 要求线程a执行完才开始线程b, 线程b执行完才开始线程
