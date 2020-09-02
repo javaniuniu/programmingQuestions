@@ -111,7 +111,7 @@
     - [TransferQueue实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject15/Test_TransferQueue.java)
     - [AtomicInteger实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject15/Test_AtomicInteger.java)
     - [BlockingQueue实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject15/Test_BlockingQueue.java)
-    - 
+    - [CAS](src/main/java/com/javaniuniu/juc/loop/output/subject15/Test_CAS.java)
     
 16. 线程池想过类示例
     - [Executor](src/main/java/com/javaniuniu/juc/loop/output/subject16/Test_Executor.java)
@@ -124,7 +124,9 @@
     - [CachedPool](src/main/java/com/javaniuniu/juc/loop/output/subject16/Test_CachedPool.java)
     - [FixedThreadPool](src/main/java/com/javaniuniu/juc/loop/output/subject16/Test_FixedThreadPool.java)
     - [ScheduledPool](src/main/java/com/javaniuniu/juc/loop/output/subject16/Test_ScheduledPool.java)
-    
+    - [ForkJoinPool](src/main/java/com/javaniuniu/juc/loop/output/subject16/Test_ForkJoinPool.java)
+    - [WorkStealingPool](src/main/java/com/javaniuniu/juc/loop/output/subject16/Test_WorkStealingPool.java)
+    - [ParallelStreamAPI](src/main/java/com/javaniuniu/juc/loop/output/subject16/Test_ParallelStreamAPI.java)
     
     
 
