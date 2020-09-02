@@ -9,10 +9,13 @@ import java.util.Random;
  * @date: 2020/9/3 12:55 AM
  */
 public class Test_ParallelStreamAPI {
-    public static void main(String[] args) {
-        List<Integer> nums = new ArrayList<>();
+    static List<Integer> nums = new ArrayList<>();
+    static {
         Random r = new Random();
         for(int i=0; i<10000; i++) nums.add(1000000 + r.nextInt(1000000));
+    }
+    public static void main(String[] args) {
+
 
         //System.out.println(nums);
 
@@ -38,4 +41,13 @@ public class Test_ParallelStreamAPI {
         }
         return true;
     }
+
+    public static void foreach() {
+        nums.forEach(v->isPrime(v));
+    }
+
+    public static void parallelStream() {
+        nums.parallelStream().forEach(Test_ParallelStreamAPI::isPrime);
+    }
+
 }
