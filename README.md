@@ -11,6 +11,7 @@
 2. 题目二：写两个线程，一个线程打印1～52，另一个线程打印A～Z，打印顺序是12A34B...5152Z；
     - [显示锁实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject2/D1.java)
     - [内置锁实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject2/Demo1.java)
+    - [TransferQueue实现方式](src/main/java/com/javaniuniu/juc/loop/output/subject2/Test_TransferQueue.java)
 3. 问题描述 
    启动3个线程打印递增的数字, 线程1先打印1,2,3,4,5, 然后是线程2打印6,7,8,9,10, 然后是线程3打印11,12,13,14,15. 接着再由线程1打印16,17,18,19,20….以此类推, 直到打印到75. 程序的输出结果应该为:
    
@@ -82,6 +83,28 @@
     - [弱](src/main/java/com/javaniuniu/juc/loop/output/subject11/Test_WeakReference.java)
     - 虚：管理堆外内存  
    
+12. 对比 hashtable SynchronizedHashMap  ConcurrentHashMap 的效率
+    - [hashtable](src/main/java/com/javaniuniu/juc/loop/output/subject12/Test_Hashtable.java)
+    - [SynchronizedHashMap](src/main/java/com/javaniuniu/juc/loop/output/subject12/Test_SynchronizedHashMap.java)
+    - [ConcurrentHashMap](src/main/java/com/javaniuniu/juc/loop/output/subject12/Test_ConcurrentHashMap.java)
+    - 数据插入时间 SynchronizedHashMap < hashtable < ConcurrentHashMap
+    - 数据读取时间 SynchronizedHashMap > hashtable > ConcurrentHashMap
+  
+13. 有10000张火车票，每个票都有一个编号，同时有10个窗口对外售票
+    - [Vector实现](src/main/java/com/javaniuniu/juc/loop/output/subject13/Test_TicketSell_vector2.java)
+    - [ConcurrentLinkedQueue实现](src/main/java/com/javaniuniu/juc/loop/output/subject13/Test_TicketSell_ConcurrentLinkedQueue.java)
+   
+14. Queue 想过实现和说明
+    - [ArrayBlockingQueue实现](src/main/java/com/javaniuniu/juc/loop/output/subject14/Test_ArrayBlockingQueue.java)
+    - [ConcurrentHashMape实现](src/main/java/com/javaniuniu/juc/loop/output/subject14/Test_ConcurrentHashMap.java)
+    - [ConcurrentLinkedQueue实现](src/main/java/com/javaniuniu/juc/loop/output/subject14/Test_ConcurrentLinkedQueue.java)
+    - [CopyOnWriteArrayList实现](src/main/java/com/javaniuniu/juc/loop/output/subject14/Test_CopyOnWriteArrayList.java)
+    - [DelayQueue实现](src/main/java/com/javaniuniu/juc/loop/output/subject14/Test_DelayQueue.java)
+    - [LinkedBlockingQueue实现](src/main/java/com/javaniuniu/juc/loop/output/subject14/Test_LinkedBlockingQueue.java)
+    - [PriorityQueue实现](src/main/java/com/javaniuniu/juc/loop/output/subject14/Test_PriorityQueue.java)
+    - [synchronizedList实现](src/main/java/com/javaniuniu/juc/loop/output/subject14/Test_SynchronizedList.java)
+    - [SynchronousQueue实现](src/main/java/com/javaniuniu/juc/loop/output/subject14/Test_SynchronousQueue.java)
+    - [TransferQueue实现](src/main/java/com/javaniuniu/juc/loop/output/subject14/Test_TransferQueue.java)
    
 ### [八个经典的java多线程编程题目](https://blog.csdn.net/shinecjj/article/details/103792151)
 
